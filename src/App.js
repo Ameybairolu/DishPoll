@@ -4,6 +4,7 @@ import LoginDetailsCheck from "./NonReactBasedFunctions/LoginDetailsCheck";
 import { useCallback, useEffect, useState } from "react";
 
 import LoginScreen from "./LoginScreen/LoginScreen";
+import AfterSuccessfulLoginScreen from "./AfterSuccessfulLoginScreen/AfterSuccessfulLoginScreen";
 
 function App() {
 
@@ -42,7 +43,8 @@ function App() {
 
   return (
     <>
-      {!loggedInUser.bool && <LoginScreen submitHandler={onSubmitCheckDataHandler} />}
+      {loggedInUser.bool && <LoginScreen submitHandler={onSubmitCheckDataHandler} />}
+      {!loggedInUser.bool && <AfterSuccessfulLoginScreen data={data} loggedIn={loggedInUser.name} />}
     </>
 
   );
