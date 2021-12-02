@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import classes from './LoginScreen.module.css'
 
-const LoginScreen = () => {
+const LoginScreen = (props) => {
 
     const inputUser = useRef(null);
     const inputPassword = useRef(null);
@@ -20,7 +20,7 @@ const LoginScreen = () => {
             }
         }
         else {
-            console.log("complete data obtained");
+            props.submitHandler(user, pass);
         }
 
     }
