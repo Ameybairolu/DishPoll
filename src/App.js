@@ -2,6 +2,8 @@ import fetchData from "./NonReactBasedFunctions/fetchData";
 
 import { useCallback, useEffect, useState } from "react";
 
+import LoginScreen from "./LoginScreen/LoginScreen";
+
 function App() {
 
   const [data, setData] = useState([]);
@@ -21,9 +23,7 @@ function App() {
   console.log(data);
 
   return (
-    <div>
-      <h2>Let's get started!</h2>
-    </div>
+    <LoginScreen />
   );
 }
 
