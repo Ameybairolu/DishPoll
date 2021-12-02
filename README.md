@@ -1,6 +1,6 @@
 <h1>DishPoll by Amey Bairolu</h1>
 <hr>
-<h3>Link: </h3><a href="https://ameybairolu.github.io/DishPoll/"></a>
+<h3>Link: </h3><a href="https://ameybairolu.github.io/DishPoll/">Hosted-Link</a>
 <hr>
 <h3>Tools used</h3>
 <hr>
