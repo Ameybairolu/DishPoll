@@ -11,13 +11,13 @@ const NavBarComponent = (props) => {
         <>
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand><Nav.Link as={Link} to="/home">Navbar</Nav.Link></Navbar.Brand>
+                    <Navbar.Brand><Nav.Link as={Link} to="/home">DishPoll</Nav.Link></Navbar.Brand>
                     <Nav className="me-auto">
                         <NavItem eventkey={1}>
-                            <Nav.Link as={Link} to="/tabone">First</Nav.Link>
+                            <Nav.Link as={Link} to="/dishes">Dish-List</Nav.Link>
                         </NavItem>
                         <NavItem eventkey={2}>
-                            <Nav.Link as={Link} to="/tabtwo">Second</Nav.Link>
+                            <Nav.Link as={Link} to="/scores">Scores</Nav.Link>
                         </NavItem>
                     </Nav>
                     <Button variant="outline-danger" onClick={props.logoutHandler}>Logout</Button>

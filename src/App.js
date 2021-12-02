@@ -6,8 +6,11 @@ import { useCallback, useEffect, useState } from "react";
 import LoginScreen from "./LoginScreen/LoginScreen";
 import AfterSuccessfulLoginScreen from "./AfterSuccessfulLoginScreen/AfterSuccessfulLoginScreen";
 import { useSelector } from "react-redux";
+import { useNavigate } from 'react-router-dom';
 
 function App() {
+
+  const navigate = useNavigate();
 
   const [data, setData] = useState([]);
   const loginDetails = useSelector(state => state);
@@ -37,6 +40,7 @@ function App() {
       }
     } else {
       setLoggedInUser({ bool: true, name: obtainedUser });
+      navigate('/home');
     }
   }
 

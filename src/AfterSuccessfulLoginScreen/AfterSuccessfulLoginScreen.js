@@ -14,11 +14,11 @@ const AfterSuccessfulLoginScreen = (props) => {
         <>
             <NavBarComponent logoutHandler={props.logoutHandler} />
             <Routes>
-                <Route path='tabone'
+                <Route path='dishes'
                     element={<DisplayingData data={props.data} loggedIn={props.loggedIn} />}
                 />
-                <Route path='tabtwo'
-                    element={<DisplayResult data={props.data} />}
+                <Route path='scores'
+                    element={<DisplayResult data={props.data} loggedIn={props.loggedIn} />}
                 />
                 <Route path='*'
                     element={<LoginSuccess loggedIn={props.loggedIn} />}

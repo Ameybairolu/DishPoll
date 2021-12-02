@@ -2,10 +2,14 @@
   width: 100%;
   display: flex;
   border-bottom: 2px solid black;
+  align-items: center;
+  background-color: #fca311;
 }
 
 .buttonsContainer button {
   border: none;
+  width: 40px;
+  height: 40px;
   border-left: 2px solid black;
   border-right: 2px solid black;
 }
