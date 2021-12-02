@@ -1,5 +1,7 @@
 import classes from './LoginSuccess.module.css';
 
+// NOTE: This is a simple page that simply welcomes the user after successful login
+
 const LoginSuccess = (props) => {
     return (
         <div className={classes.common}>

@@ -5,8 +5,11 @@ import { Nav, Navbar, Container, NavItem, Button } from "react-bootstrap";
 
 import { Link } from 'react-router-dom';
 
+// NOTE: I used React bootstrap to declare this Navbar and its tab. 
+// Nav Link is used in order to change the url based on the destination mentioned by the attribute "to"
+// URL changing is required in ordered to switch between tabs easily
+
 const NavBarComponent = (props) => {
-    // logoutHandler
     return (
         <>
             <Navbar bg="dark" variant="dark">

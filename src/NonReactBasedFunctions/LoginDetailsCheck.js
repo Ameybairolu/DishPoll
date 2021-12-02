@@ -1,3 +1,5 @@
+// NOTE: This function simply checks if the data entered by the user is correct
+
 const LoginDetailsCheck = (obtainedUser, obtainedPassword, loginDetails) => {
 
     const filteredUser = loginDetails.filter(eachUser => {

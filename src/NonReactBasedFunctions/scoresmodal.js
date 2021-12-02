@@ -1,1 +1,0 @@
-export const scores = new Array(30).fill({ score: 0 });

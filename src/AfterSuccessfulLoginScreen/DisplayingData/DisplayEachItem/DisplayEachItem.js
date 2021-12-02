@@ -1,15 +1,13 @@
 import { useEffect, useState } from 'react';
 import classes from './DisplayEachItem.module.css';
 import { useSelector } from 'react-redux';
-// useDispatch 
+
+
+// NOTE: This component is responsible for rendering each food item row-wise. 
 
 const DisplayEachItem = (props) => {
 
-    // <DisplayEachItem key={`item#${eachItem.id}`} itemInfo={eachItem} button={eachItemButtonClickHandle} loggedIn={props.loggedIn} />;
-
     const loginDetails = useSelector(state => state)
-    // console.log(loginDetails);
-    // console.log(loginDetails);
 
     const [label, setLabel] = useState(null);
 

@@ -5,12 +5,14 @@ import ShowPositionButton from "./ShowPositionButtons/ShowPositionButton";
 import { useDispatch } from "react-redux";
 import { dataActions } from "../../store/storeIndex";
 
+// NOTE: This is the section that shows all the Dishes, and employs DisplayEachItem and ShowPositionButton components. 
+
 const DisplayingData = (props) => {
 
     const dispatch = useDispatch();
-    // props: { data, loggedIn }
     const [activePosition, setPosition] = useState(0);
 
+    // NOTE: The below logic is required in order to perform voting
     const positionButtonClickedHandle = (pos) => {
         if (pos === activePosition) {
             setPosition(0);
@@ -24,6 +26,7 @@ const DisplayingData = (props) => {
             return;
         }
         else {
+            // NOTE: Note the useDispatch hook used at line 12. Through that and the logic below, we are able to manipulate redux data. 
             dispatch(dataActions.setPositionHandler({
                 id,
                 loggedIn: props.loggedIn,

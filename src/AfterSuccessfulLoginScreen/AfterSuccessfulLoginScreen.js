@@ -8,8 +8,9 @@ import LoginSuccess from "./LoginSuccess/LoginSuccess";
 
 import DisplayResult from "./DisplayResults/DisplayResults";
 
+// NOTE: This component is the container of all the sections required to display to a user who is logged in
+
 const AfterSuccessfulLoginScreen = (props) => {
-    // props: {data,loggedIn}
     return (
         <>
             <NavBarComponent logoutHandler={props.logoutHandler} />

@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 import classes from './LoginScreen.module.css'
 
+// NOTE: This is a simple form required to get input from the user for loging in
+
 const LoginScreen = (props) => {
 
     const inputUser = useRef(null);
@@ -8,7 +10,6 @@ const LoginScreen = (props) => {
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        // console.log(inputUser.current.value);
         const user = inputUser.current.value;
         const pass = inputPassword.current.value;
         if (user.length === 0 || pass.length === 0) {
@@ -34,11 +35,11 @@ const LoginScreen = (props) => {
                     <table>
                         <tbody>
                             <tr>
-                                <td><label htmlFor="username" >Username: </label></td>
+                                <td><label htmlFor="username" >&nbsp; Username: </label></td>
                                 <td><input id="username" ref={inputUser} placeholder="Enter username" required /></td>
                             </tr>
                             <tr>
-                                <td><label htmlFor="password" >Password: </label>
+                                <td><label htmlFor="password" >&nbsp; Password: </label>
                                 </td>
                                 <td><input id="password" ref={inputPassword} type="password" placeholder="Enter password" required /></td>
                             </tr>

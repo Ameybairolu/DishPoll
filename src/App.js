@@ -12,15 +12,27 @@ function App() {
 
   const navigate = useNavigate();
 
+  // NOTE: Data received from the API is stored in data 
   const [data, setData] = useState([]);
+
+  // NOTE: To get all user data
   const loginDetails = useSelector(state => state);
+
+  // NOTE: The gotError state gets error if thrown at the time of data fetching
+  const [gotError, setErrorState] = useState(null);
+
+  // NOTE: This state is required to get the state of the userlogin and username
 
   const [loggedInUser, setLoggedInUser] = useState({ bool: false, name: '' });
 
   const fetchDishData = useCallback(
     async () => {
       const receivedData = await fetchData();
-      setData(receivedData);
+      if (typeof receivedData === 'number') {
+        setErrorState(receivedData);
+      } else {
+        setData(receivedData);
+      }
     }
     , []
   );
@@ -28,6 +40,8 @@ function App() {
   useEffect(() => {
     fetchDishData();
   }, [fetchDishData]);
+
+  // NOTE: When the login form is properly filled, the below function is triggered
 
   const onSubmitCheckDataHandler = (obtainedUser, obtainedPass) => {
     const checkData = LoginDetailsCheck(obtainedUser, obtainedPass, loginDetails);
@@ -50,8 +64,17 @@ function App() {
 
   return (
     <>
-      {!loggedInUser.bool && <LoginScreen submitHandler={onSubmitCheckDataHandler} />}
-      {loggedInUser.bool && <AfterSuccessfulLoginScreen data={data} loggedIn={loggedInUser.name} logoutHandler={logoutClickHandler} />}
+      {gotError && <div style={{
+        textAlign: 'center',
+        width: "100vw",
+        height: "100vh",
+        display: 'flex',
+        alignItems: 'center'
+      }}
+      ><h1>Error: {gotError} Please try again later</h1></div>}
+
+      {!gotError && !loggedInUser.bool && <LoginScreen submitHandler={onSubmitCheckDataHandler} />}
+      {!gotError && loggedInUser.bool && <AfterSuccessfulLoginScreen data={data} loggedIn={loggedInUser.name} logoutHandler={logoutClickHandler} />}
     </>
 
   );

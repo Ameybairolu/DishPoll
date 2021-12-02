@@ -2,6 +2,8 @@ import DisplayEachRow from "./DisplayEachRow/DisplayEachRow";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
+// NOTE: This component is responsible for rendering poll results page. This employs DisplayEachRow component in the same directory.
+
 const DisplayResults = (props) => {
 
     const loginDetails = useSelector(state => state);
