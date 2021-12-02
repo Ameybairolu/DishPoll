@@ -10,7 +10,7 @@ function App() {
 
   const [data, setData] = useState([]);
 
-  const [loggedInUser, setLoggedInUser] = useState({ bool: false, name: null });
+  const [loggedInUser, setLoggedInUser] = useState({ bool: false, name: 'amey' });
 
   const fetchDishData = useCallback(
     async () => {
@@ -23,8 +23,6 @@ function App() {
   useEffect(() => {
     fetchDishData();
   }, [fetchDishData]);
-
-  console.log(data);
 
   const onSubmitCheckDataHandler = (obtainedUser, obtainedPass) => {
     const checkData = LoginDetailsCheck(obtainedUser, obtainedPass);

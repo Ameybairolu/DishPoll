@@ -2,13 +2,16 @@ import NavBarComponent from "./NavBar/NavBarComponent";
 
 import { Route, Routes } from "react-router-dom";
 
-const AfterSuccessfulLoginScreen = () => {
+import DisplayingData from "./DisplayingData/DisplayingData";
+
+const AfterSuccessfulLoginScreen = (props) => {
+    // props: {data,loggedIn}
     return (
         <>
             <NavBarComponent />
             <Routes>
                 <Route path='tabone'
-                    element={<h1>First</h1>}
+                    element={<DisplayingData data={props.data} loggedIn={props.loggedIn} />}
                 />
                 <Route path='tabtwo'
                     element={<h1>Second</h1>}

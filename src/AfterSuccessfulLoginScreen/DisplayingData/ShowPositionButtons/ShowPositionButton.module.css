@@ -1,0 +1,8 @@
+.buttonsContainer {
+  width: 100%;
+  display: flex;
+}
+
+.active {
+  background-color: red;
+}

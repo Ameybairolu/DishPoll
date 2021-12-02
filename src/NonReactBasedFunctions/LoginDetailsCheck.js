@@ -1,6 +1,10 @@
-import { loginDetails } from "./magicData";
+import { useSelector, useDispatch } from 'react-redux';
 
 const LoginDetailsCheck = (obtainedUser, obtainedPassword) => {
+
+    const loginDetails = useSelector(state => {
+        console.log(state);
+    })
     const filteredUser = loginDetails.filter(eachUser => {
         return eachUser.username === obtainedUser;
     })
