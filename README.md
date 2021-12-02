@@ -32,38 +32,38 @@
     <li>username: light, password: admin</li>
     <li>username: loki, password: admin</li>
     </ol>
-    <img src="./snap1.png">
+    <img src="./snapshots/snap1.png">
     </li>
     <li>
     <p> Once you successfully login, the below picture will be displayed.
     </p>
-    <img src="./snap2.png">
+    <img src="./snapshots/snap2.png">
     </li>
     <li>
     <p> To go to the page with all the dishes, click on "Dish-List" button in NavBar.
     </p>
-    <img src="./snap3.png">
+    <img src="./snapshots/snap3.png">
     </li>
     <li>
     <p> To start polling, click on the number as shown in point 1 in the image below. 
     Once either one of the buttons, 1,2,3, is red, click on the 'x button' belonging to the row you want to put the poll in. (Refer the below image again)
     </p>
-    <img src="./snap4.png">
+    <img src="./snapshots/snap4.png">
     </li>
     <li>
     <p> After successful polling, your screen should look something like this.
     </p>
-    <img src="./snap5.png">
+    <img src="./snapshots/snap5.png">
     </li>
     <li>
     <p> You can perform polling for other users. By clicking on the logout button as shown in the image below. Logging in again using any of the credentials in point 1.
     </p>
-    <img src="./snap6.png">
+    <img src="./snapshots/snap6.png">
     </li>
     <li>
     <p> To view the polling results, click on "Scores button" in the NavBar as shown in the picture below.
     </p>
-    <img src="./snap7.png">
+    <img src="./snapshots/snap7.png">
     </li>
     <li>
     <p> Now to understand polling results,
@@ -75,7 +75,7 @@
         </li>
         </ol>
     </p>
-    <img src="./snap8.png">
+    <img src="./snapshots/snap8.png">
     </li>
     <li>
     <p>
