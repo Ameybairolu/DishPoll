@@ -4,20 +4,24 @@ import { Route, Routes } from "react-router-dom";
 
 import DisplayingData from "./DisplayingData/DisplayingData";
 
+import LoginSuccess from "./LoginSuccess/LoginSuccess";
+
+import DisplayResult from "./DisplayResults/DisplayResults";
+
 const AfterSuccessfulLoginScreen = (props) => {
     // props: {data,loggedIn}
     return (
         <>
-            <NavBarComponent />
+            <NavBarComponent logoutHandler={props.logoutHandler} />
             <Routes>
                 <Route path='tabone'
                     element={<DisplayingData data={props.data} loggedIn={props.loggedIn} />}
                 />
                 <Route path='tabtwo'
-                    element={<h1>Second</h1>}
+                    element={<DisplayResult data={props.data} />}
                 />
                 <Route path='*'
-                    element={<h1>Hey man</h1>}
+                    element={<LoginSuccess loggedIn={props.loggedIn} />}
                 />
             </Routes>
         </>

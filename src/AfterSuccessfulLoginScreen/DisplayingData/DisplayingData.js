@@ -29,6 +29,7 @@ const DisplayingData = (props) => {
                 loggedIn: props.loggedIn,
                 activePosition
             }));
+            setPosition(0);
         }
     }
 

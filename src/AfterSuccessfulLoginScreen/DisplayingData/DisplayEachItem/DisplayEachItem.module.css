@@ -25,4 +25,17 @@
 .position {
   height: 60px;
   width: 60px;
+  font-weight: 700;
+}
+
+.pos1 {
+  background-color: #1aa7ec;
+}
+
+.pos2 {
+  background-color: #b30000;
+}
+
+.pos3 {
+  background-color: lightgreen;
 }

@@ -38,41 +38,39 @@ let initialState = [
     },
 ];
 
-// export const setPositionHandler = (pos, id, user) => {
-//     const index = loginDetails.findIndex(eachUser => {
-//         return eachUser.username === user;
-//     })
-//     if (pos === 1) {
-//         loginDetails[index].first = id;
-//     }
-//     if (pos === 2) {
-//         loginDetails[index].second = id;
-//     }
-//     if (pos === 3) {
-//         loginDetails[index].second = id;
-//     }
-//     loginDetails = [...loginDetails];
-// }
-
-
-// Creating a slice using redux toolkit
-
 const dataSlice = createSlice({
     name: 'everyUserData',
     initialState,
     reducers: {
         setPositionHandler(state, action) {
-            console.log(action.payload);
             const index = state.findIndex(eachUser => {
                 return eachUser.username === action.payload.loggedIn;
             });
             if (action.payload.activePosition === 1) {
+                if (state[index].second === action.payload.id) {
+                    state[index].second = 0;
+                }
+                if (state[index].third === action.payload.id) {
+                    state[index].third = 0;
+                }
                 state[index].first = action.payload.id;
             }
             if (action.payload.activePosition === 2) {
+                if (state[index].first === action.payload.id) {
+                    state[index].first = 0;
+                }
+                if (state[index].third === action.payload.id) {
+                    state[index].third = 0;
+                }
                 state[index].second = action.payload.id;
             }
             if (action.payload.activePosition === 3) {
+                if (state[index].first === action.payload.id) {
+                    state[index].second = 0;
+                }
+                if (state[index].second === action.payload.id) {
+                    state[index].second = 0;
+                }
                 state[index].third = action.payload.id;
             }
         },

@@ -1,11 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Nav, Navbar, Container, NavItem } from "react-bootstrap";
+import { Nav, Navbar, Container, NavItem, Button } from "react-bootstrap";
 
 
 import { Link } from 'react-router-dom';
 
-const NavBarComponent = () => {
+const NavBarComponent = (props) => {
+    // logoutHandler
     return (
         <>
             <Navbar bg="dark" variant="dark">
@@ -19,6 +20,7 @@ const NavBarComponent = () => {
                             <Nav.Link as={Link} to="/tabtwo">Second</Nav.Link>
                         </NavItem>
                     </Nav>
+                    <Button variant="outline-danger" onClick={props.logoutHandler}>Logout</Button>
                 </Container>
             </Navbar>
         </>

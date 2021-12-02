@@ -5,12 +5,14 @@ import { useCallback, useEffect, useState } from "react";
 
 import LoginScreen from "./LoginScreen/LoginScreen";
 import AfterSuccessfulLoginScreen from "./AfterSuccessfulLoginScreen/AfterSuccessfulLoginScreen";
+import { useSelector } from "react-redux";
 
 function App() {
 
   const [data, setData] = useState([]);
+  const loginDetails = useSelector(state => state);
 
-  const [loggedInUser, setLoggedInUser] = useState({ bool: false, name: 'amey' });
+  const [loggedInUser, setLoggedInUser] = useState({ bool: false, name: '' });
 
   const fetchDishData = useCallback(
     async () => {
@@ -25,8 +27,7 @@ function App() {
   }, [fetchDishData]);
 
   const onSubmitCheckDataHandler = (obtainedUser, obtainedPass) => {
-    const checkData = LoginDetailsCheck(obtainedUser, obtainedPass);
-    console.log(checkData);
+    const checkData = LoginDetailsCheck(obtainedUser, obtainedPass, loginDetails);
     if (!checkData.bool) {
       if (checkData.username_wrong) {
         window.alert("Please check your username");
@@ -39,10 +40,14 @@ function App() {
     }
   }
 
+  const logoutClickHandler = () => {
+    setLoggedInUser({ bool: false, name: '' });
+  };
+
   return (
     <>
-      {loggedInUser.bool && <LoginScreen submitHandler={onSubmitCheckDataHandler} />}
-      {!loggedInUser.bool && <AfterSuccessfulLoginScreen data={data} loggedIn={loggedInUser.name} />}
+      {!loggedInUser.bool && <LoginScreen submitHandler={onSubmitCheckDataHandler} />}
+      {loggedInUser.bool && <AfterSuccessfulLoginScreen data={data} loggedIn={loggedInUser.name} logoutHandler={logoutClickHandler} />}
     </>
 
   );
